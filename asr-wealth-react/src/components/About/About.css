@@ -1,0 +1,292 @@
+/* ============================================================
+   SERVICE & ABOUT — Pixology Service Layout & ASR Promise
+   ============================================================ */
+
+.service {
+  background-color: var(--surface-container-low);
+}
+
+.service .section-title {
+  margin-block: 20px 50px;
+}
+
+.service-grid {
+  margin-block-end: 80px;
+}
+
+.service-card,
+.service .link-card {
+  padding: 40px 30px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-card {
+  height: 100%;
+  background-color: var(--surface-container-lowest);
+  padding-block-end: 35px;
+  border-bottom: 3px solid transparent;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-1);
+}
+
+.service-card:is(:hover, :focus-within) {
+  border-color: rgb(var(--color));
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.service-card .card-icon {
+  max-width: max-content;
+  padding: 15px;
+  border-radius: var(--radius-base);
+  background-color: rgba(var(--color), 0.15);
+  margin-block-end: 25px;
+  transition: transform var(--transition-2);
+}
+
+.service-card:is(:hover, :focus-within) .card-icon {
+  transform: rotateY(0.5turn);
+}
+
+.service-card .card-title {
+  color: var(--on-surface);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  line-height: 1.35;
+  transition: color var(--transition-1);
+}
+
+.service-card .card-title:is(:hover, :focus-within) {
+  color: rgb(var(--color));
+}
+
+/* ── Link Card (8th card from Pixology) ── */
+.service .link-card {
+  height: 100%;
+  background-color: rgba(93, 92, 231, 0.10);
+  border: 1px dashed var(--electric-indigo);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  transition: all var(--transition-2);
+}
+
+.service .link-card .span {
+  color: var(--on-surface);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  margin-block-end: 15px;
+  transition: color var(--transition-1);
+}
+
+.service .link-card svg {
+  color: var(--electric-indigo);
+  font-size: 80px;
+  transform: rotate(-45deg);
+  transition: all var(--transition-2);
+}
+
+.service .link-card:is(:hover, :focus) {
+  background-color: var(--electric-indigo);
+  border-style: solid;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.service .link-card:is(:hover, :focus) .span {
+  color: var(--white);
+}
+
+.service .link-card:is(:hover, :focus) svg {
+  color: var(--vivid-yellow);
+  transform: rotate(-45deg) scale(1.1);
+}
+
+/* ── ASR Promise Subsection ── */
+.promise-section {
+  margin-block-start: 60px;
+  margin-block-end: 80px;
+}
+
+.promise-grid {
+  margin-block-start: 40px;
+}
+
+.promise-card {
+  background-color: var(--surface-container-lowest);
+  padding: 40px 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid transparent;
+  transition: all var(--transition-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.promise-card:hover {
+  border-bottom-color: rgb(var(--color));
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-6px);
+}
+
+.promise-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background-color: rgba(var(--color), 0.12);
+  color: rgb(var(--color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  margin-block-end: 24px;
+  transition: transform 0.5s ease;
+}
+
+.promise-card:hover .promise-icon {
+  transform: rotateY(0.5turn);
+}
+
+.promise-title {
+  font-weight: var(--fw-700);
+  margin-block-end: 8px;
+  color: var(--on-surface);
+}
+
+.promise-subtitle {
+  color: var(--electric-indigo);
+  font-weight: var(--fw-600);
+  margin-block-end: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--fs-label-sm);
+}
+
+.promise-desc {
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+}
+
+/* ── Vision & Mission ── */
+.vision-mission-grid {
+  display: grid;
+  gap: 24px;
+  margin-block-end: 80px;
+}
+
+.vm-box {
+  background-color: var(--surface-container-lowest);
+  padding: 40px 36px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--outline-variant);
+  box-shadow: var(--shadow-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform var(--transition-2), box-shadow var(--transition-2);
+}
+
+.vm-box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--electric-indigo);
+}
+
+.vm-icon {
+  font-size: 3.6rem;
+  color: var(--electric-indigo);
+  margin-block-end: 20px;
+}
+
+.vm-title {
+  margin-block-end: 16px;
+  color: var(--on-surface);
+  font-weight: var(--fw-700);
+}
+
+.vm-text {
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+}
+
+/* ── Who We Serve ── */
+.who-we-serve {
+  margin-block-start: 60px;
+}
+
+.client-grid {
+  margin-block-start: 36px;
+}
+
+.client-card {
+  background-color: var(--surface-container-lowest);
+  padding: 32px 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-3);
+  border: 1px solid var(--outline-variant);
+  text-align: center;
+  transition: all var(--transition-2);
+}
+
+.client-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--electric-indigo);
+}
+
+.client-icon {
+  font-size: 3.6rem;
+  color: var(--electric-indigo);
+  margin-block-end: 18px;
+  display: inline-block;
+}
+
+.client-title {
+  margin-block-end: 10px;
+  color: var(--on-surface);
+  font-weight: var(--fw-600);
+}
+
+.client-desc {
+  color: var(--on-surface-variant);
+  font-size: var(--fs-label-md);
+  line-height: 1.5;
+}
+
+/* ── Responsive Grids ── */
+@media (min-width: 768px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .promise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vision-mission-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .service-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .promise-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .client-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

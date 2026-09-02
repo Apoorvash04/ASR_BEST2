@@ -1,0 +1,200 @@
+/* ============================================================
+   HEADER — DESIGN.md: Glassmorphism, Electric Indigo Underline
+   ============================================================ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding-block: 16px;
+  transition: all var(--transition-2);
+}
+
+/* Glassmorphism on scroll per DESIGN.md */
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-glass);
+  padding-block: 10px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo, .logo-mobile {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-mobile .logo-img {
+  height: 42px;
+  max-width: 150px;
+  background-color: var(--white);
+  padding: 4px 8px;
+  border-radius: var(--radius-base);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Mobile Nav Button */
+.nav-open-btn {
+  font-size: 3.2rem;
+  color: var(--deep-onyx);
+  display: block;
+}
+
+.header-actions .btn {
+  display: none;
+}
+
+/* Mobile Drawer */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: var(--deep-onyx);
+  padding: 30px;
+  z-index: 1001;
+  transition: transform 0.4s var(--cubic-out);
+  visibility: hidden;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar.active {
+  transform: translateX(-300px);
+  visibility: visible;
+}
+
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 40px;
+}
+
+.nav-close-btn {
+  font-size: 3rem;
+  color: var(--white);
+}
+
+.navbar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.navbar-link {
+  color: var(--inverse-on-surface);
+  font-size: var(--fs-label-md);
+  font-weight: 500;
+  transition: var(--transition-1);
+}
+
+.navbar-link:hover {
+  color: var(--vivid-yellow);
+}
+
+/* Overlay */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(24, 28, 32, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-1);
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Desktop Navigation (>=992px) */
+@media (min-width: 992px) {
+  .nav-open-btn,
+  .nav-close-btn,
+  .navbar-top,
+  .nav-overlay {
+    display: none;
+  }
+
+  .header-actions .btn {
+    display: inline-flex;
+  }
+
+  .navbar {
+    all: unset;
+    display: flex;
+  }
+
+  .navbar-list {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .navbar-link {
+    color: var(--on-surface-variant);
+    font-size: var(--fs-label-md);
+    font-weight: 600;
+    position: relative;
+    padding-block: 6px;
+    letter-spacing: 0.02em;
+    transition: color var(--transition-1);
+  }
+  
+  .header.scrolled .navbar-link {
+    color: var(--on-surface);
+  }
+
+  /* Animated Indigo Underline on Hover per DESIGN.md */
+  .navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2.5px;
+    background-color: var(--electric-indigo);
+    transition: width var(--transition-2);
+    border-radius: 2px;
+  }
+
+  .navbar-link:hover::after {
+    width: 100%;
+  }
+  
+  .navbar-link:hover {
+    color: var(--electric-indigo);
+  }
+
+  .logo-img {
+    height: 52px;
+    max-width: 200px;
+  }
+}

@@ -1,0 +1,188 @@
+/* ============================================================
+   HERO — Pixology Layout with DESIGN.md Theme Tokens
+   ============================================================ */
+
+.hero {
+  padding-block-start: calc(var(--section-padding) + 60px);
+  overflow: hidden;
+  background-color: var(--surface);
+}
+
+.hero .container {
+  display: grid;
+  gap: 60px;
+}
+
+.hero-title {
+  margin-block-end: 20px;
+  color: var(--on-surface);
+}
+
+.hero-text {
+  font-size: var(--fs-7);
+  margin-block: 25px 35px;
+  color: var(--on-surface-variant);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.hero-content :is(.wrapper, .hero-btn) {
+  display: flex;
+  align-items: center;
+}
+
+.hero-content .wrapper {
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-block-end: 35px;
+}
+
+.hero-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--on-surface);
+  transition: var(--transition-1);
+  font-family: var(--ff-body);
+}
+
+.hero-btn:is(:hover, :focus) {
+  color: var(--electric-indigo);
+}
+
+.hero-btn ion-icon,
+.hero-btn svg {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.hero-btn .span {
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+}
+
+.hero .social-list {
+  display: flex;
+  gap: 12px;
+}
+
+.hero .social-link {
+  background-color: var(--surface-container-lowest);
+  color: var(--color);
+  padding: 12px;
+  box-shadow: var(--shadow-1);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-8);
+  transition: all var(--transition-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .social-link .span {
+  display: none;
+}
+
+.hero .social-link svg {
+  font-size: 20px;
+}
+
+.hero .social-link:is(:hover, :focus) {
+  background-color: var(--color);
+  color: var(--white);
+  border-color: var(--color);
+}
+
+.hero-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-banner img {
+  border-radius: var(--radius-20);
+  object-fit: contain;
+}
+
+/* ── Tablet (>=768px) ── */
+@media (min-width: 768px) {
+  .hero .container {
+    gap: 80px;
+  }
+
+  .hero .wrapper {
+    gap: 40px;
+    margin-block-end: 50px;
+  }
+
+  .hero .social-link .span {
+    display: block;
+    font-size: var(--fs-9);
+    color: var(--on-surface);
+    font-weight: var(--fw-700);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color var(--transition-2);
+  }
+
+  .hero .social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 6px 0;
+  }
+
+  .hero .social-link:is(:hover, :focus) {
+    background: unset;
+    color: var(--color);
+  }
+
+  .hero .social-link:is(:hover, :focus) .span {
+    color: var(--color);
+  }
+}
+
+/* ── Desktop (>=992px) ── */
+@media (min-width: 992px) {
+  .hero {
+    background-image: linear-gradient(to right, var(--surface) 79%, var(--vivid-yellow) 79%);
+    padding-block-start: 160px;
+    padding-block-end: 80px;
+  }
+
+  .hero .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .hero .wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .hero .btn,
+  .hero-btn .span {
+    flex-shrink: 0;
+  }
+
+  .hero-banner {
+    margin-inline-end: -140px;
+  }
+}
+
+/* ── Large Desktop (>=1200px) ── */
+@media (min-width: 1200px) {
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 20px;
+  }
+
+  .hero-banner {
+    margin-inline-end: -220px;
+    min-width: max-content;
+  }
+}

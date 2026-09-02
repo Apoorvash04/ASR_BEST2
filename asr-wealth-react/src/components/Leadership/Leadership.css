@@ -1,0 +1,141 @@
+/* ============================================================
+   LEADERSHIP — DESIGN.md: Surface Hierarchy, Pill Chips, Crisp Geometry
+   ============================================================ */
+
+.leadership {
+  background-color: var(--surface-container-low);
+}
+
+.leadership-header {
+  margin-block-end: 60px;
+}
+
+.leadership-intro {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--on-surface-variant);
+  font-size: var(--fs-body-lg);
+  line-height: 1.6;
+}
+
+.leadership-grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 992px) {
+  .leadership-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.leadership-card {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--outline-variant);
+  overflow: hidden;
+  transition: all var(--transition-2);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.leadership-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--electric-indigo);
+}
+
+.leader-banner {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leader-archetype {
+  color: var(--white);
+  font-family: var(--ff-body);
+  font-size: var(--fs-label-sm);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.leader-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-full);
+  background-color: var(--deep-onyx);
+  border: 3px solid var(--vivid-yellow);
+  margin: -38px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.leader-avatar span {
+  color: var(--white);
+  font-family: var(--ff-heading);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-700);
+}
+
+.leader-body {
+  padding: 24px 28px 32px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.leader-name {
+  text-align: center;
+  margin-block-end: 6px;
+  color: var(--on-surface);
+  font-weight: var(--fw-700);
+}
+
+.leader-role {
+  text-align: center;
+  font-size: var(--fs-label-sm);
+  color: var(--outline);
+  margin-block-end: 20px;
+  line-height: 1.4;
+}
+
+.leader-bio {
+  font-size: var(--fs-body-md);
+  color: var(--on-surface-variant);
+  margin-block-end: 20px;
+  line-height: 1.6;
+}
+
+.leader-philosophy {
+  font-style: italic;
+  border-left: 3px solid var(--electric-indigo);
+  padding-left: 14px;
+  font-size: 1.4rem;
+  margin-block-end: 24px;
+  color: var(--on-surface);
+  line-height: 1.5;
+}
+
+.leader-attributes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block-start: auto;
+}
+
+.leader-attribute-pill {
+  font-size: var(--fs-label-sm);
+  font-weight: var(--fw-600);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--outline-variant);
+}
