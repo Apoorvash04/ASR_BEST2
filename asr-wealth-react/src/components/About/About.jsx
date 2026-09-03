@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   IoArrowForward,
@@ -42,6 +42,8 @@ const getClientIcon = (iconName) => {
 };
 
 const About = () => {
+  const [activeClientIndex, setActiveClientIndex] = useState(0);
+
   return (
     <section className="section service" id="service" aria-label="service">
       <div className="container">
@@ -112,7 +114,7 @@ const About = () => {
           </motion.div>
 
           <motion.div 
-            className="promise-grid grid-list"
+            className="promise-grid"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -164,25 +166,64 @@ const About = () => {
           viewport={{ once: true, margin: "-50px" }}
           variants={fadeInUp}
         >
-          <h3 className="h3 text-center section-title">Who We Serve</h3>
-          <motion.div 
-            className="client-grid grid-list"
-            variants={staggerContainer}
+          <div className="who-we-serve-header text-center">
+            <p className="section-subtitle has-before text-center">Tailored Advisory</p>
+            <h3 className="h3 text-center section-title">Who We <span className="has-before">Serve</span></h3>
+          </div>
+
+          <div 
+            className="client-expandable-container"
+            role="region"
+            aria-label="Client profiles"
           >
-            {clientTypes.map((client, index) => (
-              <motion.div 
-                key={index} 
-                className="client-card"
-                variants={fadeInUp}
-              >
-                <div className="client-icon">
-                  {getClientIcon(client.icon)}
+            {clientTypes.map((client, index) => {
+              const isActive = activeClientIndex === index;
+              return (
+                <div 
+                  key={client.id || index}
+                  className={`client-expandable-card ${isActive ? 'active' : ''}`}
+                  onMouseEnter={() => setActiveClientIndex(index)}
+                  onClick={() => setActiveClientIndex(index)}
+                  onFocus={() => setActiveClientIndex(index)}
+                  tabIndex={0}
+                  role="button"
+                  aria-pressed={isActive}
+                  aria-label={`${client.title} profile`}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setActiveClientIndex(index);
+                    }
+                  }}
+                >
+                  <div className="client-card-inner">
+                    <div className="client-icon-badge">
+                      {getClientIcon(client.icon)}
+                    </div>
+
+                    <div className="client-card-body">
+                      <h4 className="client-card-title">{client.title}</h4>
+                      <p className="client-card-desc">
+                        {isActive ? client.description : (client.shortDesc || client.description)}
+                      </p>
+                    </div>
+
+                    <div className="client-card-action-wrap">
+                      <a 
+                        href={client.link || "#offerings"} 
+                        className="client-card-action"
+                        tabIndex={isActive ? 0 : -1}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <span>{client.ctaText || 'Learn More'}</span>
+                        <IoArrowForward aria-hidden="true" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <h4 className="h4 client-title">{client.title}</h4>
-                <p className="client-desc">{client.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+              );
+            })}
+          </div>
         </motion.div>
 
       </div>

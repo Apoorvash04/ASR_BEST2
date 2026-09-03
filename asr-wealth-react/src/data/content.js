@@ -53,22 +53,34 @@ export const promiseData = [
 
 export const clientTypes = [
   {
+    id: 'hni',
     title: 'HNI & UHNI Families',
+    shortDesc: 'Bespoke wealth & legacy preservation.',
     description:
-      'Sophisticated wealth management, preservation, and legacy planning.',
+      'Sophisticated wealth management, tailored estate structuring, asset protection, and generational legacy planning designed for substantial family estates.',
     icon: 'business',
+    ctaText: 'Learn More',
+    link: '#offerings',
   },
   {
+    id: 'professionals',
     title: 'Young Professionals',
+    shortDesc: 'Disciplined capital accumulation.',
     description:
-      'Building a strong financial foundation and accelerating long-term wealth creation.',
+      'Building a strong financial foundation, systematic investment discipline, and accelerating long-term wealth creation for ambitious modern professionals.',
     icon: 'briefcase',
+    ctaText: 'Learn More',
+    link: '#offerings',
   },
   {
+    id: 'multi-gen',
     title: 'Multi-Generational Families',
+    shortDesc: 'Intergenerational wealth alignment.',
     description:
-      'Aligning family wealth, succession, and intergenerational goals.',
+      'Aligning family wealth, succession architecture, business transition governance, and enduring intergenerational financial goals across decades.',
     icon: 'people',
+    ctaText: 'Learn More',
+    link: '#offerings',
   },
 ];
 
