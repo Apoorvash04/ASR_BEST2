@@ -1,0 +1,758 @@
+/* ============================================================
+   MF TOOLS PAGE STYLING — Interactive Portal
+   Matches uploaded design reference with ASR Wealth brand theme
+   ============================================================ */
+
+.mf-tools-page {
+  background-color: #FAFBFD;
+  min-height: 100vh;
+  padding-block-start: 110px;
+  padding-block-end: 90px;
+}
+
+.mf-tools-container {
+  max-width: 1180px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* ── Top Header Section Matching Screenshot ── */
+.mf-header-centered {
+  text-align: center;
+  margin-block-end: 46px;
+}
+
+.mf-header-title {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: clamp(2.6rem, 3.5vw, 3.4rem);
+  font-weight: 700;
+  color: #1E293B;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.mf-accent-bar {
+  width: 160px;
+  height: 4px;
+  background-color: #1E293B;
+  margin: 14px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* ── 2-Column Portal Layout ── */
+.mf-portal-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+}
+
+/* ── Left Sidebar Navigation (Dark buttons matching screenshot) ── */
+.mf-sidebar-nav {
+  width: 260px;
+  flex-shrink: 0;
+}
+
+.mf-sidebar-title {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 16px 0;
+}
+
+.mf-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  background-color: #0A0D14;
+  border: 1px solid #1F2937;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.mf-sidebar-btn {
+  background-color: #0A0D14;
+  color: #F9FAFB;
+  border: none;
+  border-bottom: 1px solid #1F2937;
+  padding: 13px 18px;
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+  width: 100%;
+  line-height: 1.35;
+  position: relative;
+}
+
+.mf-sidebar-btn:last-child {
+  border-bottom: none;
+}
+
+.mf-sidebar-btn:hover {
+  background-color: #1F2937;
+  color: #F4B400;
+  padding-left: 22px;
+}
+
+.mf-sidebar-btn.active {
+  background-color: #1E293B;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-left: 4px solid #F4B400;
+  padding-left: 20px;
+}
+
+/* ── Right Content Area ── */
+.mf-content-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.mf-tool-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 36px 40px;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* ── Form Rows Matching Screenshot ── */
+.mf-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mf-form-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.mf-form-label {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1E293B;
+  line-height: 1.3;
+}
+
+.mf-form-control-wrap {
+  width: 100%;
+}
+
+.mf-form-select,
+.mf-form-input {
+  width: 100%;
+  height: 44px;
+  padding: 8px 14px;
+  border: 1px solid #CBD5E1;
+  border-radius: 4px;
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  font-size: 1.5rem;
+  color: #1E293B;
+  background-color: #FFFFFF;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mf-form-select:focus,
+.mf-form-input:focus {
+  border-color: #F4B400;
+  box-shadow: 0 0 0 3px rgba(244, 180, 0, 0.15);
+}
+
+/* ── Split Row (2 columns: e.g. Amount & SIP Date / From & To Date) ── */
+.mf-form-row-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.mf-split-cell {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ── Calculate Button ── */
+.mf-form-action-row {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 180px;
+}
+
+.mf-calculate-btn {
+  background-color: #2563EB;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 10px 32px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+}
+
+.mf-calculate-btn:hover {
+  background-color: #1D4ED8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* ── Validation Error Banner ── */
+.mf-error-banner {
+  background-color: #FEF2F2;
+  border-left: 4px solid #EF4444;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #991B1B;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.mf-error-icon {
+  font-size: 1.6rem;
+}
+
+/* ── Result View Styling ── */
+.mf-result-container {
+  animation: mfFadeIn 0.3s ease-out forwards;
+}
+
+.mf-result-header {
+  border-bottom: 1px solid #E2E8F0;
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+}
+
+.mf-result-badge {
+  display: inline-block;
+  background-color: rgba(244, 180, 0, 0.15);
+  color: #B45309;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.mf-result-scheme-name {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 6px 0;
+}
+
+.mf-result-dates-sub {
+  font-size: 1.4rem;
+  color: #64748B;
+  margin: 0;
+}
+
+/* ── KPI Grid ── */
+.mf-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.mf-kpi-card {
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 4px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mf-kpi-card.highlight-gold {
+  background: linear-gradient(135deg, #FFFDF7 0%, #FEF9EB 100%);
+  border-color: #F4B400;
+}
+
+.mf-kpi-label {
+  font-size: 1.3rem;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.mf-kpi-value {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.mf-kpi-meta {
+  font-size: 1.25rem;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-green {
+  color: #15803D;
+}
+
+.text-red {
+  color: #DC2626;
+}
+
+.text-amber {
+  color: #D97706;
+}
+
+/* ── Milestone Table ── */
+.mf-milestone-table-wrap {
+  margin-bottom: 28px;
+}
+
+.mf-table-title {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 12px;
+}
+
+.mf-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  font-size: 1.45rem;
+}
+
+.mf-data-table th {
+  background-color: #F1F5F9;
+  color: #334155;
+  font-weight: 700;
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 2px solid #CBD5E1;
+}
+
+.mf-data-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #E2E8F0;
+  color: #1E293B;
+}
+
+.mf-data-table tbody tr:hover {
+  background-color: #F8FAFC;
+}
+
+.table-sub-text {
+  display: block;
+  font-size: 1.25rem;
+  color: #64748B;
+  font-weight: normal;
+}
+
+.table-tag {
+  display: inline-block;
+  background-color: #F1F5F9;
+  color: #334155;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.nfo-status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nfo-status-badge.open {
+  background-color: #DCFCE7;
+  color: #166534;
+}
+
+.nfo-status-badge.forthcoming {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+/* ── Re-Calculate Action ── */
+.mf-recalc-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.mf-recalc-btn {
+  background-color: #1E293B;
+  color: #FFFFFF;
+  border: none;
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  padding: 11px 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mf-recalc-btn:hover {
+  background-color: #F4B400;
+  color: #000000;
+}
+
+/* ── Toolbar for Tables ── */
+.mf-tool-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.mf-search-input {
+  flex: 1;
+  max-width: 380px;
+  height: 42px;
+  padding: 8px 14px;
+  border: 1px solid #CBD5E1;
+  border-radius: 4px;
+  font-size: 1.45rem;
+  outline: none;
+}
+
+.mf-search-input:focus {
+  border-color: #F4B400;
+}
+
+.mf-filter-select {
+  height: 42px;
+  padding: 8px 14px;
+  border: 1px solid #CBD5E1;
+  border-radius: 4px;
+  font-size: 1.45rem;
+  outline: none;
+}
+
+.mf-period-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.mf-period-btn {
+  background-color: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mf-period-btn.active {
+  background-color: #1E293B;
+  color: #FFFFFF;
+  border-color: #1E293B;
+}
+
+.mf-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* ── Factsheet View Styling ── */
+.factsheet-details {
+  margin-top: 24px;
+}
+
+.factsheet-header-box {
+  background: linear-gradient(135deg, #FAFBFD 0%, #F1F5F9 100%);
+  border: 1px solid #E2E8F0;
+  border-left: 4px solid #F4B400;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.factsheet-header-box h3 {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #0F172A;
+}
+
+.factsheet-header-box p {
+  color: #64748B;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.factsheet-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.factsheet-kpi {
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 14px;
+  border-radius: 4px;
+}
+
+.factsheet-kpi span {
+  display: block;
+  font-size: 1.2rem;
+  color: #64748B;
+}
+
+.factsheet-kpi strong {
+  display: block;
+  font-size: 1.8rem;
+  color: #0F172A;
+  margin-top: 4px;
+}
+
+.factsheet-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.factsheet-col h4 {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 14px;
+}
+
+.holdings-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.holdings-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 4px;
+}
+
+.holding-rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background-color: #1E293B;
+  color: #FFFFFF;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.holding-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.sector-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sector-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sector-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.sector-progress {
+  height: 8px;
+  background-color: #E2E8F0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sector-fill {
+  height: 100%;
+  background-color: #F4B400;
+  border-radius: 4px;
+}
+
+/* ── Scheme Comparison Table ── */
+.compare-selectors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.compare-select-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mf-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.45rem;
+}
+
+.mf-compare-table th {
+  background-color: #1E293B;
+  color: #FFFFFF;
+  padding: 14px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.mf-compare-table td {
+  padding: 14px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.mf-compare-table tr:nth-child(even) {
+  background-color: #F8FAFC;
+}
+
+/* ── SWP Grid ── */
+.mf-swp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ── Animation ── */
+@keyframes mfFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive Styling ── */
+@media (max-width: 992px) {
+  .mf-portal-layout {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .mf-sidebar-nav {
+    width: 100%;
+  }
+
+  .mf-sidebar-list {
+    flex-direction: row;
+    overflow-x: auto;
+    border-radius: 4px;
+  }
+
+  .mf-sidebar-btn {
+    border-bottom: none;
+    border-right: 1px solid #1F2937;
+    white-space: nowrap;
+    padding: 12px 16px;
+  }
+
+  .mf-sidebar-btn.active {
+    border-left: none;
+    border-bottom: 4px solid #F4B400;
+  }
+
+  .mf-form-row-split {
+    grid-template-columns: 1fr;
+  }
+
+  .mf-split-cell {
+    grid-template-columns: 180px 1fr;
+  }
+
+  .factsheet-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .mf-tool-card {
+    padding: 24px 18px;
+  }
+
+  .mf-form-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .mf-split-cell {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .mf-form-action-row {
+    padding-left: 0;
+  }
+
+  .mf-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .factsheet-kpi-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .compare-selectors {
+    grid-template-columns: 1fr;
+  }
+
+  .mf-swp-grid {
+    grid-template-columns: 1fr;
+  }
+}

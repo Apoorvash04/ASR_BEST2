@@ -1,0 +1,175 @@
+/* ============================================================
+   EDUCATION CALCULATOR SPECIFIC STYLING
+   Independent styling for EducationCalculator.tsx
+   ============================================================ */
+
+.education-card {
+  width: 100%;
+}
+
+/* ── Validation Error Banner ── */
+.education-error-banner {
+  background-color: #FEF2F2;
+  border-left: 4px solid #EF4444;
+  border-radius: 0;
+  padding: 12px 16px;
+  margin-block-end: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #991B1B;
+  font-size: 1.4rem;
+  font-weight: 500;
+  animation: educationFadeIn 0.25s ease-out forwards;
+}
+
+.education-error-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Result Section (Rendered BELOW the Inputs) ── */
+.education-result-section {
+  margin-block-start: 32px;
+  padding-block-start: 28px;
+  border-top: 1.5px dashed #CBD5E1;
+  animation: educationFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.education-result-heading {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-block-end: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.education-result-heading-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #F4B400;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.education-result-box {
+  background: linear-gradient(135deg, #FAFBFD 0%, #F8FAFC 100%);
+  border: 1px solid #E2E8F0;
+  border-left: 4px solid #F4B400;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.education-result-p {
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  font-size: 1.65rem;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0;
+}
+
+.education-highlight-val {
+  font-weight: 700;
+  color: #1E293B;
+  white-space: nowrap;
+}
+
+.education-highlight-gold {
+  font-weight: 700;
+  color: #B45309;
+  background-color: rgba(244, 180, 0, 0.12);
+  padding: 2px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.education-highlight-lumpsum {
+  font-weight: 700;
+  color: #4341CD;
+  background-color: rgba(67, 65, 205, 0.08);
+  padding: 2px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.education-highlight-sip {
+  font-weight: 800;
+  color: #0F172A;
+  background-color: rgba(244, 180, 0, 0.18);
+  padding: 2px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+/* ── Re-Calculate Action ── */
+.education-recalc-action {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 22px;
+}
+
+.education-recalc-btn {
+  background-color: #1E293B;
+  color: #FFFFFF;
+  border: 1.5px solid #1E293B;
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  padding: 11px 28px;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 180px;
+}
+
+.education-recalc-btn:hover {
+  background-color: #F4B400;
+  border-color: #F4B400;
+  color: #000000;
+}
+
+/* ── Animations ── */
+@keyframes educationFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive Adjustments ── */
+@media (max-width: 768px) {
+  .education-result-box {
+    padding: 18px 20px;
+    gap: 14px;
+  }
+
+  .education-result-p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-result-box {
+    padding: 16px 14px;
+  }
+
+  .education-result-p {
+    font-size: 1.4rem;
+  }
+
+  .education-recalc-btn {
+    width: 100%;
+  }
+}

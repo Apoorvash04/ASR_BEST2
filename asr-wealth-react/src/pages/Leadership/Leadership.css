@@ -1,0 +1,18 @@
+﻿/* ============================================================
+   LEADERSHIP PAGE STYLING
+   ============================================================ */
+
+.leadership-page {
+  padding-block-start: 140px;
+  padding-block-end: 90px;
+  background-color: var(--surface-container-lowest);
+  min-height: 100vh;
+}
+
+.leadership-page .page-header {
+  margin-block-end: 45px;
+}
+
+.leadership-page .section.leadership {
+  padding-block: 0;
+}

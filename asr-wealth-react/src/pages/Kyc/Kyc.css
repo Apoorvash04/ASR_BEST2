@@ -1,0 +1,232 @@
+/* ============================================================
+   KYC PAGE STYLING — Column-wise Company Logos & Links
+   Matches uploaded layout reference
+   ============================================================ */
+
+.kyc-page {
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  padding-block-start: 110px;
+  padding-block-end: 100px;
+}
+
+.kyc-container {
+  max-width: 1080px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* ── Centered Header ── */
+.kyc-header-centered {
+  text-align: center;
+  margin-block-end: 44px;
+}
+
+.kyc-title {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: clamp(2.8rem, 4vw, 3.8rem);
+  font-weight: 700;
+  color: #1E293B;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.kyc-accent-bar {
+  width: 170px;
+  height: 4px;
+  background-color: #1E293B;
+  margin: 14px auto 24px auto;
+  border-radius: 2px;
+}
+
+.kyc-regulatory-notice {
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  font-size: 1.45rem;
+  line-height: 1.7;
+  color: #334155;
+  max-width: 960px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* ── 2-Column Grid: Check KYC Status + Validate KYC ── */
+.kyc-columns-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-block-start: 36px;
+  margin-block-end: 54px;
+}
+
+.kyc-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kyc-column-heading {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 26px 0;
+  text-align: center;
+}
+
+.kyc-items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 340px;
+}
+
+.kyc-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 28px;
+}
+
+/* ── Real Company Logos ── */
+.kyc-logo-anchor {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.kyc-logo-anchor:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.kyc-company-logo {
+  height: 20px;
+  width: auto;
+  max-width: 110px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: inline-block;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.logo-cdsl { height: 21px; }
+.logo-nsdl { height: 18px; }
+.logo-camskra { height: 17px; }
+.logo-nse { height: 19px; }
+.logo-karvy { height: 17px; }
+.logo-cams { height: 16px; }
+.logo-kfintech { height: 19px; }
+
+.kyc-link {
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: #1E3A8A;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.kyc-link:hover {
+  color: #D97706;
+  text-decoration-color: #D97706;
+}
+
+/* ── Download Forms Section ── */
+.kyc-downloads-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block-start: 20px;
+  padding-block-start: 30px;
+}
+
+.kyc-download-badge-wrap {
+  margin-block-end: 22px;
+}
+
+.kyc-download-badge {
+  display: inline-block;
+  background-color: #374151;
+  color: #FFFFFF;
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.kyc-downloads-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.kyc-download-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 28px;
+}
+
+.kyc-download-item.indent-cams {
+  padding-left: 28px;
+}
+
+/* ── Responsive Styling ── */
+@media (max-width: 768px) {
+  .kyc-columns-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .kyc-column {
+    align-items: flex-start;
+  }
+
+  .kyc-column-heading {
+    text-align: left;
+  }
+
+  .kyc-items-list {
+    max-width: 100%;
+  }
+
+  .kyc-downloads-section {
+    align-items: flex-start;
+  }
+
+  .kyc-downloads-list {
+    max-width: 100%;
+  }
+
+  .kyc-regulatory-notice {
+    font-size: 1.35rem;
+    text-align: left;
+  }
+
+  .kyc-link {
+    font-size: 1.45rem;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .kyc-download-item.indent-cams {
+    padding-left: 0;
+  }
+}

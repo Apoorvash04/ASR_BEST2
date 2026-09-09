@@ -6,7 +6,7 @@ import {
   IoHandLeftOutline, 
   IoFlashOutline 
 } from 'react-icons/io5';
-import { whyChooseUsData, brandData } from '../../data/content';
+import { whyChooseUsData } from '../../data/content';
 import { staggerContainer, fadeInUp } from '../../utils/animations';
 import './WhyChooseUs.css';
 

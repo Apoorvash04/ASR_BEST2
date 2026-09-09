@@ -131,3 +131,29 @@
     font-size: var(--fs-body-md);
   }
 }
+
+.card-action-wrap {
+  margin-top: 12px;
+}
+
+.card-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--deep-onyx);
+  color: var(--white);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: all var(--transition-1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-action-link:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(67, 65, 205, 0.35);
+}
+

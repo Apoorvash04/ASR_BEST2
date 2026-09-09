@@ -1,0 +1,280 @@
+/* ============================================================
+   SIP DELAY CALCULATOR SPECIFIC STYLING
+   Independent styling for SipDelayCalculator.tsx
+   ============================================================ */
+
+.delay-card {
+  /* Inherits base .sip-card styles from SipCalculator.css */
+  width: 100%;
+}
+
+/* ── Validation Error Banner ── */
+.delay-error-banner {
+  background-color: #FEF2F2;
+  border-left: 4px solid #EF4444;
+  border-radius: 0;
+  padding: 12px 16px;
+  margin-block-end: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #991B1B;
+  font-size: 1.4rem;
+  font-weight: 500;
+  animation: delayFadeIn 0.25s ease-out forwards;
+}
+
+.delay-error-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Results Screen Header Bar ── */
+.delay-results-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-block-end: 22px;
+  padding-block-end: 16px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.delay-recalc-back-btn {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1E293B;
+  background-color: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.delay-recalc-back-btn:hover {
+  background-color: #F4B400;
+  border-color: #F4B400;
+  color: #000000;
+}
+
+.delay-param-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.delay-chip {
+  font-size: 1.25rem;
+  color: #475569;
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 4px 10px;
+  border-radius: 0;
+}
+
+.delay-chip strong {
+  color: #1E293B;
+  margin-right: 3px;
+}
+
+/* ── Graph Section ── */
+.delay-chart-section {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 24px 22px 20px;
+  margin-block-end: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.delay-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-block-end: 20px;
+}
+
+.delay-chart-title {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.delay-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.delay-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+.delay-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.dot-gold {
+  background-color: #F4B400;
+}
+
+.dot-indigo {
+  background-color: #4341CD;
+}
+
+.dot-loss {
+  background-color: #EF4444;
+}
+
+.delay-barchart-wrapper {
+  width: 100%;
+  height: 320px;
+}
+
+/* ── Tooltip for Cost of Delay Chart ── */
+.delay-chart-tooltip {
+  background-color: rgba(24, 28, 32, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px 16px;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+}
+
+.delay-tooltip-title {
+  font-size: 1.3rem;
+  color: #94A3B8;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.delay-tooltip-val {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ── Result Statement (No Card Divs, Pure Stylized Text) ── */
+.delay-statement-section {
+  background: linear-gradient(135deg, #FAFBFD 0%, #F5F7FA 100%);
+  border: 1px solid #E2E8F0;
+  border-left: 4px solid #F4B400;
+  padding: 24px 28px;
+  margin-block-end: 24px;
+}
+
+.delay-statement-text {
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  font-size: 1.85rem;
+  line-height: 1.65;
+  color: #1E293B;
+  margin: 0;
+}
+
+.delay-val-highlight {
+  font-weight: 700;
+  color: #1E293B;
+}
+
+.delay-loss-highlight {
+  font-weight: 800;
+  color: #DC2626;
+  background-color: rgba(239, 68, 68, 0.08);
+  padding: 2px 8px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.delay-compounding-note {
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  font-size: 1.35rem;
+  color: #64748B;
+  font-style: italic;
+  margin-block-start: 14px;
+  margin-block-end: 0;
+}
+
+/* ── Recalculate Button Action ── */
+.delay-recalculate-action {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 18px;
+}
+
+.delay-recalculate-btn {
+  /* Extends .sip-calculate-btn */
+  min-width: 200px;
+}
+
+/* ── Animations ── */
+.delay-fade-in {
+  animation: delayFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes delayFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive Styling ── */
+@media (max-width: 768px) {
+  .delay-statement-text {
+    font-size: 1.65rem;
+    line-height: 1.55;
+  }
+
+  .delay-results-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delay-chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delay-statement-section {
+    padding: 18px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .delay-statement-text {
+    font-size: 1.5rem;
+  }
+
+  .delay-chart-section {
+    padding: 16px 12px;
+  }
+
+  .delay-barchart-wrapper {
+    height: 280px;
+  }
+}

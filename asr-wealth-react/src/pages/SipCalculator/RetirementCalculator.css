@@ -1,0 +1,310 @@
+/* ============================================================
+   RETIREMENT CALCULATOR SPECIFIC STYLING
+   Independent styling for RetirementCalculator.tsx
+   ============================================================ */
+
+.retirement-card {
+  width: 100%;
+}
+
+/* ── Validation Error Banner ── */
+.retirement-error-banner {
+  background-color: #FEF2F2;
+  border-left: 4px solid #EF4444;
+  border-radius: 0;
+  padding: 12px 16px;
+  margin-block-end: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #991B1B;
+  font-size: 1.4rem;
+  font-weight: 500;
+  animation: retirementFadeIn 0.25s ease-out forwards;
+}
+
+.retirement-error-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Result Screen Header Bar ── */
+.retirement-results-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-block-end: 24px;
+  padding-block-end: 18px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.retirement-recalc-btn {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1E293B;
+  background-color: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.retirement-recalc-btn:hover {
+  background-color: #F4B400;
+  border-color: #F4B400;
+  color: #000000;
+}
+
+.retirement-param-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.retirement-chip {
+  font-size: 1.25rem;
+  color: #475569;
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 4px 10px;
+  border-radius: 0;
+}
+
+.retirement-chip strong {
+  color: #1E293B;
+  margin-right: 2px;
+}
+
+/* ── Result Table (Clean Table Layout Matching Site Theme) ── */
+.retirement-table-container {
+  width: 100%;
+  margin-block-start: 12px;
+  margin-block-end: 28px;
+  background-color: #FFFFFF;
+  border: 1px solid #EDEDED;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.retirement-result-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+}
+
+.retirement-result-table tr {
+  border-bottom: 1px solid #EDEDED;
+  transition: background-color 0.15s ease;
+}
+
+.retirement-result-table tr:last-child {
+  border-bottom: none;
+}
+
+.retirement-result-table tr:hover {
+  background-color: #FAFAFA;
+}
+
+.retirement-cell-label {
+  padding: 13px 20px;
+  font-size: 1.55rem;
+  font-weight: 400;
+  color: #555555;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.retirement-cell-value {
+  padding: 13px 20px;
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: #222222;
+  text-align: right;
+  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Highlighting specific metrics per requirements */
+.cell-green-bold {
+  color: #059669 !important;
+  font-weight: 700 !important;
+}
+
+.cell-red-bold {
+  color: #DC2626 !important;
+  font-weight: 700 !important;
+}
+
+.cell-gold-bold {
+  color: #B45309 !important;
+  font-weight: 700 !important;
+}
+
+/* ── Retirement Chart Section ── */
+.retirement-chart-section {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 24px 22px 20px;
+  margin-block-end: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.retirement-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-block-end: 20px;
+}
+
+.retirement-chart-title {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin: 0;
+}
+
+.retirement-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.retirement-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+.retirement-legend-dot {
+  width: 12px;
+  height: 3px;
+  border-radius: 1px;
+}
+
+.dot-your-inv {
+  background-color: #4341CD;
+}
+
+.dot-add-inv {
+  background-color: #F4B400;
+}
+
+.retirement-linechart-wrapper {
+  width: 100%;
+  height: 340px;
+}
+
+/* ── Chart Floating Tooltip ── */
+.retirement-chart-tooltip {
+  background-color: rgba(24, 28, 32, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px 16px;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  min-width: 210px;
+}
+
+.retirement-tooltip-header {
+  font-size: 1.3rem;
+  color: #94A3B8;
+  font-weight: 600;
+  margin-block-end: 8px;
+  padding-block-end: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.retirement-tooltip-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 1.35rem;
+  margin-block: 4px;
+}
+
+.tooltip-color-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.retirement-tooltip-amt {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ── Bottom Recalculate Action Button ── */
+.retirement-bottom-recalc {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 22px;
+}
+
+.retirement-action-recalc-btn {
+  min-width: 200px;
+}
+
+/* ── Animation ── */
+.retirement-fade-in {
+  animation: retirementFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes retirementFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive Styling ── */
+@media (max-width: 768px) {
+  .retirement-cell-label,
+  .retirement-cell-value {
+    padding: 11px 14px;
+    font-size: 1.4rem;
+  }
+
+  .retirement-results-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .retirement-chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .retirement-cell-label,
+  .retirement-cell-value {
+    padding: 10px 10px;
+    font-size: 1.3rem;
+  }
+
+  .retirement-linechart-wrapper {
+    height: 290px;
+  }
+}

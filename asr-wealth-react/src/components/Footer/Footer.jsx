@@ -1,133 +1,195 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
-  IoLogoYoutube, 
   IoLogoTwitter, 
   IoLogoFacebook, 
   IoLogoLinkedin, 
-  IoLogoInstagram 
+  IoLogoInstagram,
+  IoCall,
+  IoMail,
+  IoLocation
 } from 'react-icons/io5';
-import { brandData, footerLinks } from '../../data/content';
+import { companyProfileData } from '../../data/content';
 import './Footer.css';
 
-const instaPosts = [
-  { id: 1, image: '/assets/images/insta-post-1.jpg', width: 77, height: 63 },
-  { id: 2, image: '/assets/images/insta-post-2.jpg', width: 76, height: 63 },
-  { id: 3, image: '/assets/images/insta-post-3.jpg', width: 77, height: 63 },
-  { id: 4, image: '/assets/images/insta-post-4.jpg', width: 77, height: 63 },
-  { id: 5, image: '/assets/images/insta-post-5.jpg', width: 76, height: 63 },
-  { id: 6, image: '/assets/images/insta-post-6.jpg', width: 77, height: 63 }
-];
-
 const Footer = () => {
+  const { 
+    aboutUs, 
+    quickLinks, 
+    serviceLinks, 
+    contact, 
+    disclaimer, 
+    disclaimerParagraphs, 
+    corporate, 
+    policyLinks 
+  } = companyProfileData;
+
+  const disclaimers = disclaimerParagraphs && disclaimerParagraphs.length > 0 
+    ? disclaimerParagraphs 
+    : [disclaimer];
+
   return (
     <footer className="footer">
       <div className="container">
 
-        <div className="footer-top section">
+        {/* ── 4-Column Main Footer Top ── */}
+        <div className="footer-top">
 
-          {/* Column 1: Brand Info & Socials */}
-          <div className="footer-brand">
-            <p className="footer-list-title">About {brandData.name}</p>
+          {/* Column 1: About Us */}
+          <div className="footer-col footer-col-about">
+            <h4 className="footer-list-title">About Us</h4>
             <p className="footer-text">
-              {brandData.description}
+              {aboutUs}
             </p>
+          </div>
 
-            <ul className="social-list">
+          {/* Column 2: Quick Links */}
+          <div className="footer-col footer-col-links">
+            <h4 className="footer-list-title">Quick Links</h4>
+            <ul className="footer-links-list">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <a href={link.href} target="_blank" rel="noopener noreferrer" className="footer-link">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Service Link */}
+          <div className="footer-col footer-col-links">
+            <h4 className="footer-list-title">Service Link</h4>
+            <ul className="footer-links-list">
+              {serviceLinks.map((link, index) => (
+                <li key={index}>
+                  {link.href.startsWith('/') ? (
+                    <Link to={link.href} className="footer-link">
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="footer-link">
+                      {link.label}
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Get In Touch */}
+          <div className="footer-col footer-col-contact">
+            <h4 className="footer-list-title">Get In Touch</h4>
+
+            <div className="footer-contact-item">
+              <IoLocation className="contact-icon" aria-hidden="true" />
+              <div className="contact-details">
+                <strong className="contact-company">{contact.company}</strong>
+                <p className="contact-address">{contact.address}</p>
+              </div>
+            </div>
+
+            <div className="footer-contact-item">
+              <IoCall className="contact-icon" aria-hidden="true" />
+              <a href={`tel:${contact.phone.replace(/[^0-9+]/g, '')}`} className="footer-link contact-link">
+                {contact.phone}
+              </a>
+            </div>
+
+            <div className="footer-contact-item">
+              <IoMail className="contact-icon" aria-hidden="true" />
+              <a href={`mailto:${contact.email}`} className="footer-link contact-link">
+                {contact.email}
+              </a>
+            </div>
+
+            {/* Social Icons Row */}
+            <ul className="footer-social-row" aria-label="Social media links">
               <li>
-                <a href="#" className="social-link" aria-label="YouTube">
-                  <IoLogoYoutube />
-                </a>
-              </li>
-              <li>
-                <a href="#" className="social-link" aria-label="Twitter">
-                  <IoLogoTwitter />
-                </a>
-              </li>
-              <li>
-                <a href="#" className="social-link" aria-label="Facebook">
+                <a href={contact.socials[0].url} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-fb" aria-label="Facebook">
                   <IoLogoFacebook />
                 </a>
               </li>
               <li>
-                <a href="#" className="social-link" aria-label="LinkedIn">
+                <a href={contact.socials[1].url} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-twitter" aria-label="X / Twitter">
+                  <IoLogoTwitter />
+                </a>
+              </li>
+              <li>
+                <a href={contact.socials[2].url} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-insta" aria-label="Instagram">
+                  <IoLogoInstagram />
+                </a>
+              </li>
+              <li>
+                <a href={contact.socials[3].url} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-linkedin" aria-label="LinkedIn">
                   <IoLogoLinkedin />
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <ul className="footer-list">
-            <li>
-              <p className="footer-list-title">Useful Links</p>
-            </li>
-            {footerLinks.quickLinks.map((link, index) => (
-              <li key={index}>
-                <a href={link.href} className="footer-link">{link.label}</a>
-              </li>
-            ))}
-          </ul>
+        </div>
 
-          {/* Column 3: Offerings */}
-          <ul className="footer-list">
-            <li>
-              <p className="footer-list-title">Our Solutions</p>
-            </li>
-            {footerLinks.offerings.map((link, index) => (
-              <li key={index}>
-                <a href={link.href} className="footer-link">{link.label}</a>
-              </li>
-            ))}
-          </ul>
+        {/* ── Subtle Section Divider ── */}
+        <div className="footer-divider-line" aria-hidden="true"></div>
 
-          {/* Column 4: Pixology Instagram Post Gallery */}
-          <div className="footer-list">
-            <p className="footer-list-title">Instagram Post</p>
+        {/* ── Disclaimer Text ── */}
+        <div className="footer-disclaimer-wrap">
+          {disclaimers.map((para, idx) => (
+            <p key={idx} className="footer-disclaimer-text">
+              {idx === 0 ? <><strong>Disclaimer</strong> – {para}</> : para}
+            </p>
+          ))}
+        </div>
 
-            <ul className="insta-post">
-              {instaPosts.map((post) => (
-                <li key={post.id}>
-                  <div className="insta-card">
-                    <figure className="card-banner">
-                      <img 
-                        src={post.image} 
-                        width={post.width} 
-                        height={post.height} 
-                        loading="lazy" 
-                        alt="instagram post" 
-                        className="img-cover" 
-                      />
-                    </figure>
-
-                    <a href="#" className="card-content" aria-label="View on Instagram">
-                      <IoLogoInstagram aria-hidden="true" />
-                    </a>
-                  </div>
-                </li>
-              ))}
-            </ul>
+        {/* ── Corporate & Compliance Centered Details ── */}
+        <div className="footer-corporate-center">
+          <h3 className="corporate-title">{corporate.name}</h3>
+          <div className="corporate-identifiers">
+            <div>CIN: {corporate.cin}</div>
+            <div>GSTIN: {corporate.gstin}</div>
           </div>
 
+          <div className="corporate-registrations">
+            <p className="registration-line">
+              AMFI Registered Mutual Fund Distributor | ARN-280109 | Initial Date of Registration: 07-Nov-2023 | Validity: 06-Nov-2029
+            </p>
+            <p className="registration-line">
+              AMFI Registered SIF Distributor | ARN-280109 | Initial Date of Registration: 10-Oct-2025 | Validity: 09-Oct-2028
+            </p>
+            <p className="registration-line">
+              APMI Registered PMS Distributor | APRN-05970 | Initial Date of Registration:11-Jul-2026 | Validity: 10-Jul-2029
+            </p>
+            <p className="registration-line">
+              Authorised Person of Nuvama Wealth and Investment Limited (SEBI INZ000005231)
+            </p>
+            <p className="registration-line">
+              AP Regn: BSE AP01326101159774 | NSE AP2258562283 | MCX/AP/166017 | NCDEX 126894
+            </p>
+          </div>
+
+          <p className="corporate-grievance">
+            Grievance Officer: {corporate.grievanceOfficer.name} | <a href={`mailto:${corporate.grievanceOfficer.email}`} className="corporate-grievance-link">{corporate.grievanceOfficer.email}</a> | <a href={`tel:${corporate.grievanceOfficer.phone}`} className="corporate-grievance-link">{corporate.grievanceOfficer.phone}</a>
+          </p>
         </div>
 
-        {/* Footer Bottom Bar */}
-        <div className="footer-bottom">
-          <p className="copyright">
-            &copy; 2026 {brandData.name}. All rights reserved.
+        {/* ── Bottom Bar: Copyright & 14 Policy Links (Centered) ── */}
+        <div className="footer-bottom-center">
+          <p className="bottom-copyright">
+            &copy; 2025 Credible.Live by Abhinav Mehta Capital Pvt. Ltd.
           </p>
 
-          <ul className="footer-bottom-list">
-            {footerLinks.legal.map((link, index) => (
-              <li key={index}>
-                <a href={link.href} className="footer-bottom-link">{link.label}</a>
-              </li>
+          <p className="bottom-policy-links">
+            {policyLinks.map((link, index) => (
+              <React.Fragment key={index}>
+                <a href={link.href} target="_blank" rel="noopener noreferrer" className="bottom-policy-link">
+                  {link.label}
+                </a>
+                {index < policyLinks.length - 1 && <span className="policy-sep"> | </span>}
+              </React.Fragment>
             ))}
-          </ul>
+          </p>
         </div>
-
-        <p className="amfi-disclaimer">
-          Mutual fund investments are subject to market risks. Read all scheme related documents carefully before investing.
-        </p>
 
       </div>
     </footer>

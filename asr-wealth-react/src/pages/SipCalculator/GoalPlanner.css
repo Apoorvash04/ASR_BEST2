@@ -1,0 +1,160 @@
+/* ============================================================
+   GOAL PLANNER SPECIFIC STYLING
+   Independent styling for GoalPlanner.tsx
+   ============================================================ */
+
+.goal-card {
+  width: 100%;
+}
+
+/* ── Validation Error Banner ── */
+.goal-error-banner {
+  background-color: #FEF2F2;
+  border-left: 4px solid #EF4444;
+  border-radius: 0;
+  padding: 12px 16px;
+  margin-block-end: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #991B1B;
+  font-size: 1.4rem;
+  font-weight: 500;
+  animation: goalFadeIn 0.25s ease-out forwards;
+}
+
+.goal-error-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Result Screen: Simple and Focused Container ── */
+.goal-result-screen {
+  animation: goalFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  padding: 10px 0;
+}
+
+.goal-result-box {
+  background: linear-gradient(135deg, #FAFBFD 0%, #F8FAFC 100%);
+  border: 1.5px solid #E2E8F0;
+  border-left: 4px solid #F4B400;
+  padding: 36px 38px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.goal-result-heading {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-block-end: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.goal-result-heading-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #F4B400;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.goal-result-statement {
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  font-size: 2rem;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0;
+}
+
+.goal-amount-highlight {
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #0F172A;
+  background-color: rgba(244, 180, 0, 0.16);
+  padding: 2px 10px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-inline: 4px;
+  white-space: nowrap;
+}
+
+/* ── Re-Calculate Action ── */
+.goal-recalc-action {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 28px;
+}
+
+.goal-recalc-btn {
+  background-color: #1E293B;
+  color: #FFFFFF;
+  border: 1.5px solid #1E293B;
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 190px;
+}
+
+.goal-recalc-btn:hover {
+  background-color: #F4B400;
+  border-color: #F4B400;
+  color: #000000;
+}
+
+/* ── Animation ── */
+@keyframes goalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive Styling ── */
+@media (max-width: 768px) {
+  .goal-result-box {
+    padding: 26px 22px;
+  }
+
+  .goal-result-statement {
+    font-size: 1.75rem;
+  }
+
+  .goal-amount-highlight {
+    font-size: 2.2rem;
+    padding: 2px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .goal-result-box {
+    padding: 22px 18px;
+  }
+
+  .goal-result-statement {
+    font-size: 1.55rem;
+  }
+
+  .goal-amount-highlight {
+    font-size: 1.9rem;
+    margin-block: 4px;
+    display: block;
+    width: fit-content;
+  }
+
+  .goal-recalc-btn {
+    width: 100%;
+  }
+}

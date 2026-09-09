@@ -1,0 +1,734 @@
+/* ============================================================
+   COMPANY PROFILE PAGE STYLING
+   Alternating Section Backgrounds (Surface Dividers matching Home page)
+   ============================================================ */
+
+.company-profile-page {
+  width: 100%;
+}
+
+/* ── Section 1: Hero / Header Area & The ASR Promise (Sophisticated Pearl / Slate Gray) ── */
+.profile-hero-section {
+  --gray-light: #F6F8FB;
+  --gray-mid: #ECEFF4;
+  --gray-deep: #DEE4EC;
+  padding-block-start: calc(var(--section-padding) + 60px);
+  padding-block-end: var(--section-padding);
+  background-color: var(--gray-mid);
+  background: 
+    radial-gradient(ellipse 75% 45% at 50% 10%, rgba(255, 255, 255, 0.75) 0%, rgba(220, 227, 237, 0.3) 60%, transparent 80%),
+    linear-gradient(180deg, var(--gray-light) 0%, var(--gray-mid) 50%, var(--gray-deep) 100%);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(185, 196, 210, 0.35);
+}
+
+.company-hero-header {
+  margin-block-end: 55px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Stylized Luxury Title */
+.company-hero-title {
+  font-family: var(--ff-heading);
+  font-size: clamp(3.8rem, 5.5vw, 6.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  color: var(--on-surface);
+  margin-block-end: 0;
+}
+
+.title-lead {
+  font-weight: 800;
+  color: var(--on-surface);
+}
+
+.title-accent-wrap {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.title-accent-finds {
+  font-family: var(--ff-heading);
+  font-weight: 800;
+  color: var(--on-surface);
+}
+
+.title-accent-purpose {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--electric-indigo) 0%, var(--primary) 65%, #2A28A8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-inline: 4px;
+}
+
+.title-brush-svg {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  pointer-events: none;
+}
+
+/* ── The ASR Promise (Directly below intro text) ── */
+.company-profile-page .promise-section {
+  margin-block-start: 45px;
+  margin-block-end: 0;
+}
+
+.company-profile-page .promise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1060px;
+  width: 100%;
+  margin-inline: auto;
+  margin-block-start: 36px;
+}
+
+.company-profile-page .promise-card {
+  height: 100%;
+  background-color: #FFFFFF;
+  padding: 36px 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 24px rgba(18, 38, 66, 0.05);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(180, 192, 208, 0.4);
+  border-bottom: 3px solid transparent;
+  transition: all var(--transition-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.company-profile-page .promise-card:hover {
+  border-bottom-color: rgb(var(--color));
+  box-shadow: 0 14px 32px rgba(18, 38, 66, 0.1);
+  transform: translateY(-5px);
+}
+
+.company-profile-page .promise-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background-color: rgba(var(--color), 0.12);
+  color: rgb(var(--color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  margin-block-end: 18px;
+  transition: transform 0.5s ease;
+}
+
+.company-profile-page .promise-card:hover .promise-icon {
+  transform: rotateY(0.5turn);
+}
+
+.company-profile-page .promise-title {
+  font-size: var(--fs-4);
+  font-weight: var(--fw-700);
+  margin-block-end: 6px;
+  color: var(--on-surface);
+}
+
+.company-profile-page .promise-subtitle {
+  color: var(--electric-indigo);
+  font-weight: var(--fw-600);
+  margin-block-end: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1.2rem;
+}
+
+.company-profile-page .promise-desc {
+  color: var(--on-surface-variant);
+  font-size: 1.35rem;
+  line-height: 1.55;
+}
+
+/* ── Section 2: Vision & Mission (Warm Off-White / Beige Editorial Background) ── */
+.profile-vision-mission-section {
+  --beige-light: #FAF8F5;
+  --beige-mid: #F4EFEB;
+  --beige-deep: #EDE6DB;
+  background-color: var(--beige-mid);
+  background: 
+    radial-gradient(ellipse 70% 55% at 5% 20%, rgba(220, 205, 185, 0.28) 0%, rgba(220, 205, 185, 0.05) 55%, transparent 75%),
+    radial-gradient(ellipse 60% 50% at 95% 80%, rgba(215, 198, 175, 0.22) 0%, rgba(215, 198, 175, 0.04) 50%, transparent 70%),
+    linear-gradient(180deg, var(--beige-light) 0%, var(--beige-mid) 50%, var(--beige-deep) 100%);
+  padding-block: calc(var(--section-padding) + 15px);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(210, 195, 175, 0.35);
+  border-bottom: 1px solid rgba(210, 195, 175, 0.35);
+}
+
+.profile-vision-mission-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(225, 212, 192, 0.35) 0%, rgba(225, 212, 192, 0) 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.profile-vision-mission-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -60px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 205, 185, 0.30) 0%, rgba(220, 205, 185, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.profile-vision-mission-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Left-aligned Header */
+.profile-vision-mission-section .editorial-header {
+  text-align: left;
+  max-width: 1240px;
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+}
+
+/* Two-Column Grid: Text on Left, Big Artwork Image on Right */
+.profile-vision-mission-section .editorial-main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(32px, 4vw, 56px);
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+}
+
+@media (min-width: 992px) {
+  .profile-vision-mission-section .editorial-main-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr);
+    gap: clamp(40px, 4.5vw, 72px);
+    align-items: center;
+  }
+}
+
+/* Shift column layout to the left & narrow width for multi-line flow */
+.profile-vision-mission-section .editorial-column-layout {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 3.5vw, 42px);
+  width: 100%;
+  max-width: 100%;
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+}
+
+.profile-vision-mission-section .editorial-entry-wrapper {
+  width: 100%;
+}
+
+.profile-vision-mission-section .editorial-entry {
+  /* No Box: Free-flowing unboxed editorial typography */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  gap: clamp(14px, 1.8vw, 20px);
+  will-change: transform;
+}
+
+/* Left Letter & Divider Column */
+.profile-vision-mission-section .editorial-letter-wrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.profile-vision-mission-section .editorial-watermark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(44px, 4.5vw, 58px);
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(5.2rem, 5.8vw, 7.2rem);
+  line-height: 0.8;
+  /* Brand Theme: Electric Indigo & Primary gradient */
+  background: linear-gradient(135deg, var(--electric-indigo) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+  text-transform: lowercase;
+  letter-spacing: -0.04em;
+  padding-bottom: 6px;
+  will-change: transform;
+}
+
+.profile-vision-mission-section .editorial-divider-line {
+  width: 2px;
+  background: linear-gradient(
+    180deg, 
+    rgba(93, 92, 231, 0.08) 0%, 
+    rgba(93, 92, 231, 0.55) 25%, 
+    rgba(93, 92, 231, 0.55) 75%, 
+    rgba(93, 92, 231, 0.08) 100%
+  );
+  height: 100%;
+  margin-inline-start: clamp(8px, 1.2vw, 14px);
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+
+/* Right Content Column */
+.profile-vision-mission-section .editorial-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  padding-block: 4px;
+  text-align: left;
+}
+
+.profile-vision-mission-section .editorial-tag {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--electric-indigo);
+  margin-block-end: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-vision-mission-section .editorial-tag::after {
+  content: '';
+  display: inline-block;
+  width: 26px;
+  height: 2px;
+  background: var(--vivid-yellow);
+  border-radius: 2px;
+}
+
+.profile-vision-mission-section .editorial-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block-end: 12px;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.profile-vision-mission-section .title-bold {
+  font-family: var(--ff-heading);
+  font-weight: 800;
+  font-size: clamp(2.0rem, 2.2vw, 2.4rem);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--on-surface);
+}
+
+.profile-vision-mission-section .title-serif {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(2.1rem, 2.4vw, 2.6rem);
+  color: var(--electric-indigo);
+}
+
+.profile-vision-mission-section .editorial-text {
+  color: var(--on-surface);
+  font-size: 1.42rem;
+  line-height: 1.62;
+  font-weight: 450;
+  max-width: 100%;
+  text-align: left;
+}
+
+.profile-vision-mission-section .editorial-text.sub {
+  margin-block-start: 10px;
+  color: var(--on-surface-variant);
+  font-size: 1.34rem;
+  line-height: 1.58;
+  font-weight: 400;
+  max-width: 100%;
+  text-align: left;
+}
+
+/* Separator between Vision and Mission */
+.profile-vision-mission-section .editorial-section-separator {
+  width: 100%;
+  max-width: 100%;
+  height: 1px;
+  margin-block: 4px;
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+  background: linear-gradient(
+    90deg, 
+    rgba(200, 182, 155, 0.7) 0%, 
+    rgba(93, 92, 231, 0.35) 40%, 
+    rgba(215, 198, 175, 0.5) 75%, 
+    transparent 100%
+  );
+  opacity: 0.85;
+}
+
+/* Right Column: Big Visual Artwork Image (Static, Seamless Transparent Cutout) */
+.profile-vision-mission-section .editorial-image-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.profile-vision-mission-section .editorial-image-column::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(225, 212, 192, 0.55) 0%, rgba(225, 212, 192, 0) 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.profile-vision-mission-section .editorial-image-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.profile-vision-mission-section .editorial-image {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 22px 38px rgba(35, 25, 15, 0.12));
+}
+
+/* ── Section 3: Who We Serve (Sophisticated Gray Section) ── */
+.profile-clients-section {
+  --gray-highlight: #F5F7FA;
+  --gray-base: #E9ECEF;
+  --gray-deep: #DDE2E7;
+  background: radial-gradient(
+    130% 95% at 50% 15%, 
+    var(--gray-highlight) 0%, 
+    var(--gray-base) 50%, 
+    var(--gray-deep) 100%
+  );
+  position: relative;
+  padding-block: var(--section-padding);
+  border-top: 1px solid rgba(160, 170, 185, 0.25);
+  border-bottom: 1px solid rgba(160, 170, 185, 0.25);
+}
+
+.profile-clients-section .who-we-serve-header {
+  margin-block-end: 40px;
+}
+
+.profile-clients-section .who-we-serve-header .section-title {
+  margin-block-start: 12px;
+}
+
+/* Expandable Cards Container */
+.profile-clients-section .client-expandable-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 1060px;
+  margin-inline: auto;
+}
+
+/* Expandable Card Base */
+.profile-clients-section .client-expandable-card {
+  background-color: var(--surface-container-lowest);
+  border: 1px solid rgba(175, 185, 198, 0.45);
+  border-radius: 24px;
+  padding: 32px 26px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  box-shadow: 0 10px 28px rgba(24, 28, 35, 0.05);
+  transition: 
+    flex 0.55s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.3s ease;
+}
+
+.profile-clients-section .client-expandable-card:focus-visible {
+  box-shadow: 0 0 0 3px rgba(93, 92, 231, 0.4);
+}
+
+.profile-clients-section .client-card-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Icon Badge */
+.profile-clients-section .client-icon-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-full);
+  background-color: rgba(93, 92, 231, 0.08);
+  color: var(--electric-indigo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  margin-block-end: 28px;
+  flex-shrink: 0;
+  transition: all 0.4s ease;
+}
+
+/* Card Body */
+.profile-clients-section .client-card-body {
+  flex: 1;
+  width: 100%;
+}
+
+.profile-clients-section .client-card-title {
+  color: var(--on-surface);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-700);
+  line-height: 1.3;
+  margin-block-end: 14px;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.profile-clients-section .client-card-desc {
+  color: var(--on-surface-variant);
+  font-size: var(--fs-label-md);
+  line-height: 1.6;
+  margin-block-end: 24px;
+  transition: color 0.3s ease;
+}
+
+/* Action Wrap & Button */
+.profile-clients-section .client-card-action-wrap {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-clients-section .client-card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.5rem;
+  font-weight: var(--fw-700);
+  color: var(--white);
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
+}
+
+.profile-clients-section .client-card-action svg {
+  font-size: 1.8rem;
+  transition: transform 0.25s ease;
+}
+
+.profile-clients-section .client-card-action:hover svg {
+  transform: translateX(5px);
+}
+
+.profile-clients-section .client-card-action:hover {
+  color: var(--vivid-yellow);
+}
+
+/* Inactive Card Hover */
+.profile-clients-section .client-expandable-card:not(.active):hover {
+  border-color: rgba(93, 92, 231, 0.35);
+  box-shadow: 0 10px 24px rgba(24, 28, 32, 0.07);
+  transform: translateY(-3px);
+}
+
+.profile-clients-section .client-expandable-card:not(.active):hover .client-icon-badge {
+  background-color: rgba(93, 92, 231, 0.15);
+  transform: scale(1.05);
+}
+
+/* ── Active Card State ── */
+.profile-clients-section .client-expandable-card.active {
+  background: linear-gradient(135deg, #5D5CE7 0%, #4341CD 100%);
+  border-color: transparent;
+  box-shadow: 0 20px 45px rgba(93, 92, 231, 0.32);
+}
+
+.profile-clients-section .client-expandable-card.active .client-icon-badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.profile-clients-section .client-expandable-card.active .client-card-title {
+  color: var(--white);
+  font-size: clamp(2.2rem, 2vw, 2.8rem);
+}
+
+.profile-clients-section .client-expandable-card.active .client-card-desc {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.55rem;
+  line-height: 1.65;
+  max-width: 95%;
+}
+
+.profile-clients-section .client-expandable-card.active .client-card-action {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ── Responsive Behavior ── */
+@media (min-width: 860px) {
+  .profile-clients-section .client-expandable-container {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 410px;
+    gap: 22px;
+  }
+
+  .profile-clients-section .client-expandable-card {
+    flex: 1 1 0%;
+    min-width: 0;
+    border-radius: 28px;
+    padding: 38px 30px;
+  }
+
+  .profile-clients-section .client-expandable-card.active {
+    flex: 2.3 1 0%;
+    transform: translateY(-4px);
+  }
+}
+
+@media (min-width: 992px) {
+  .profile-clients-section .client-expandable-card {
+    padding: 42px 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-hero-section {
+    padding-block-start: 110px;
+    padding-block-end: 40px;
+  }
+
+  .company-profile-page .promise-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .company-profile-page .promise-card {
+    padding: 28px 20px;
+  }
+
+  .profile-vision-mission-section .editorial-header {
+    margin-block-end: 35px;
+  }
+
+  .profile-vision-mission-section .editorial-column-layout {
+    gap: 40px;
+  }
+
+  .profile-vision-mission-section .editorial-entry {
+    gap: 20px;
+  }
+
+  .profile-vision-mission-section .editorial-watermark {
+    width: 48px;
+    font-size: clamp(4.8rem, 11vw, 6.2rem);
+  }
+
+  .profile-vision-mission-section .editorial-divider-line {
+    margin-inline-start: 10px;
+  }
+
+  .profile-vision-mission-section .editorial-image-card {
+    max-width: 420px;
+    margin-inline: auto;
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-vision-mission-section .editorial-entry {
+    gap: 12px;
+  }
+
+  .profile-vision-mission-section .editorial-watermark {
+    width: 38px;
+    font-size: 4.6rem;
+  }
+
+  .profile-vision-mission-section .editorial-divider-line {
+    margin-inline-start: 6px;
+  }
+
+  .profile-vision-mission-section .title-bold {
+    font-size: 1.85rem;
+  }
+
+  .profile-vision-mission-section .title-serif {
+    font-size: 2.0rem;
+  }
+
+  .profile-vision-mission-section .editorial-text {
+    font-size: 1.35rem;
+    line-height: 1.55;
+  }
+}

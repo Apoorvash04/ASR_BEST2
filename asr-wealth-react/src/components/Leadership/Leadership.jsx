@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { leadershipData, brandData } from '../../data/content';
+import { leadershipData } from '../../data/content';
 import { staggerContainer, fadeInUp } from '../../utils/animations';
 import './Leadership.css';
 
