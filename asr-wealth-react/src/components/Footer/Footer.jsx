@@ -20,7 +20,6 @@ const Footer = () => {
     contact, 
     disclaimer, 
     disclaimerParagraphs, 
-    corporate, 
     policyLinks 
   } = companyProfileData;
 
@@ -35,12 +34,28 @@ const Footer = () => {
         {/* ── 4-Column Main Footer Top ── */}
         <div className="footer-top">
 
-          {/* Column 1: About Us */}
+          {/* Column 1: About Us / Brand Info */}
           <div className="footer-col footer-col-about">
-            <h4 className="footer-list-title">About Us</h4>
+            <Link to="/" className="footer-brand-logo" aria-label="ASR Wealth Home">
+              <img 
+                src="/logo.png" 
+                alt="ASR Wealth Logo" 
+                className="footer-logo-img" 
+              />
+            </Link>
+
+            <p className="footer-tagline">
+              Where Wealth Finds <span className="footer-tagline-accent">Purpose.</span>
+            </p>
+
             <p className="footer-text">
               {aboutUs}
             </p>
+
+            <Link to="/company-profile" className="footer-about-link">
+              <span>Know More About Us</span>
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
           </div>
 
           {/* Column 2: Quick Links */}
@@ -140,37 +155,6 @@ const Footer = () => {
               {idx === 0 ? <><strong>Disclaimer</strong> – {para}</> : para}
             </p>
           ))}
-        </div>
-
-        {/* ── Corporate & Compliance Centered Details ── */}
-        <div className="footer-corporate-center">
-          <h3 className="corporate-title">{corporate.name}</h3>
-          <div className="corporate-identifiers">
-            <div>CIN: {corporate.cin}</div>
-            <div>GSTIN: {corporate.gstin}</div>
-          </div>
-
-          <div className="corporate-registrations">
-            <p className="registration-line">
-              AMFI Registered Mutual Fund Distributor | ARN-280109 | Initial Date of Registration: 07-Nov-2023 | Validity: 06-Nov-2029
-            </p>
-            <p className="registration-line">
-              AMFI Registered SIF Distributor | ARN-280109 | Initial Date of Registration: 10-Oct-2025 | Validity: 09-Oct-2028
-            </p>
-            <p className="registration-line">
-              APMI Registered PMS Distributor | APRN-05970 | Initial Date of Registration:11-Jul-2026 | Validity: 10-Jul-2029
-            </p>
-            <p className="registration-line">
-              Authorised Person of Nuvama Wealth and Investment Limited (SEBI INZ000005231)
-            </p>
-            <p className="registration-line">
-              AP Regn: BSE AP01326101159774 | NSE AP2258562283 | MCX/AP/166017 | NCDEX 126894
-            </p>
-          </div>
-
-          <p className="corporate-grievance">
-            Grievance Officer: {corporate.grievanceOfficer.name} | <a href={`mailto:${corporate.grievanceOfficer.email}`} className="corporate-grievance-link">{corporate.grievanceOfficer.email}</a> | <a href={`tel:${corporate.grievanceOfficer.phone}`} className="corporate-grievance-link">{corporate.grievanceOfficer.phone}</a>
-          </p>
         </div>
 
         {/* ── Bottom Bar: Copyright & 14 Policy Links (Centered) ── */}

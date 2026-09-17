@@ -42,12 +42,17 @@ const Header = () => {
     }
   };
 
+  const handleLogoClick = () => {
+    closeNav();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const isLinkActive = (href, label) => {
     if (label === 'About Us') {
       return location.pathname === '/company-profile' || location.pathname === '/our-team';
     }
     if (label === 'Offerings') {
-      return location.pathname === '/mutual-funds' || location.pathname === '/alternate-investment-funds';
+      return location.pathname === '/mutual-funds' || location.pathname === '/alternate-investment-funds' || location.pathname === '/pms' || location.pathname === '/equities';
     }
     if (label === 'Investor Zone') {
       return location.pathname === '/mf-forms' || location.pathname === '/mf-tools' || location.pathname === '/sip-calculator';
@@ -55,16 +60,13 @@ const Header = () => {
     if (label === 'KYC') {
       return location.pathname === '/kyc';
     }
-    if (label === 'Home' && location.pathname === '/') {
-      return !location.hash;
-    }
     return location.pathname === href;
   };
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container header-container">
-        <Link to="/" className="logo" onClick={closeNav} aria-label="ASR Wealth Home">
+        <Link to="/" className="logo" onClick={handleLogoClick} aria-label="ASR Wealth Home">
           <img 
             src="/logo.png" 
             alt="ASR Wealth Logo" 
@@ -76,7 +78,7 @@ const Header = () => {
         
         <nav className={`navbar ${isNavOpen ? 'active' : ''}`} ref={navRef}>
           <div className="navbar-top">
-            <Link to="/" className="logo-mobile" onClick={closeNav} aria-label="ASR Wealth Home">
+            <Link to="/" className="logo-mobile" onClick={handleLogoClick} aria-label="ASR Wealth Home">
               <img 
                 src="/logo.png" 
                 alt="ASR Wealth Logo" 

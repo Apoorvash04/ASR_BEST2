@@ -45,11 +45,62 @@
 }
 
 /* Column 1: About Us */
+.footer-brand-logo {
+  display: inline-block;
+  margin-block-end: 16px;
+  background-color: var(--white);
+  padding: 6px 14px;
+  border-radius: var(--radius-base, 8px);
+  transition: transform var(--transition-1), box-shadow var(--transition-1);
+}
+
+.footer-brand-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.footer-logo-img {
+  height: 40px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-tagline {
+  font-family: var(--ff-heading, 'DM Sans', sans-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-block-end: 14px;
+  letter-spacing: -0.01em;
+}
+
+.footer-tagline-accent {
+  color: var(--vivid-yellow, #FFDB4A);
+}
+
 .footer-col-about .footer-text {
   font-size: 1.35rem;
   line-height: 1.68;
   color: rgba(255, 255, 255, 0.85);
-  margin: 0;
+  margin-block-end: 18px;
+}
+
+.footer-about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--vivid-yellow, #FFDB4A);
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-1);
+}
+
+.footer-about-link:hover {
+  color: var(--white);
+  transform: translateX(4px);
 }
 
 /* Column 2 & 3: Quick Links & Service Links */
@@ -202,75 +253,6 @@
 .footer-disclaimer-text strong {
   color: var(--white);
   font-weight: 700;
-}
-
-/* ── Corporate & Compliance Centered Details ── */
-.footer-corporate-center {
-  text-align: center;
-  margin-block-end: 26px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.corporate-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-block-end: 6px;
-  letter-spacing: -0.01em;
-}
-
-.corporate-identifiers {
-  font-size: 1.3rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
-  margin-block-end: 18px;
-  font-weight: 500;
-  text-align: center;
-}
-
-.corporate-identifiers div {
-  margin-block: 1px;
-}
-
-.corporate-registrations {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-block-end: 18px;
-  max-width: 1000px;
-  text-align: center;
-}
-
-.registration-line {
-  font-size: 1.25rem;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0;
-  text-align: center;
-}
-
-.corporate-grievance {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0;
-  text-align: center;
-  display: block;
-}
-
-.corporate-grievance a,
-.corporate-grievance-link {
-  display: inline !important;
-  color: rgba(255, 255, 255, 0.95);
-  text-decoration: underline;
-  transition: color var(--transition-1);
-}
-
-.corporate-grievance a:hover,
-.corporate-grievance-link:hover {
-  color: var(--vivid-yellow);
 }
 
 /* ── Bottom Bar: Copyright & 14 Policy Links (Matches Image 2) ── */

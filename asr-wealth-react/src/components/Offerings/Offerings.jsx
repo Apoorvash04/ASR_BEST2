@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { offeringCategories } from '../../data/content';
 import { staggerContainer, fadeInUp } from '../../utils/animations';
 import './Offerings.css';
 
@@ -11,7 +10,8 @@ const projectShowcaseList = [
     title: 'Alternate Investment Funds',
     category: 'Alternate Investment Funds',
     tag: 'Private Equity, Debt & Hedge Funds (Min ₹1Cr)',
-    image: '/assets/images/project-1.jpg',
+    // Sleek upward financial growth chart & investment analytics
+    image: '/assets/images/offering-aif.jpg',
     width: 835,
     height: 429,
     isLarge: true,
@@ -23,7 +23,8 @@ const projectShowcaseList = [
     title: 'Bonds',
     category: 'Bonds',
     tag: 'Government Securities, Corporate Bonds & NCDs',
-    image: '/assets/images/project-2.jpg',
+    // Intriguing high-security bank vault door with precision gears — ultimate capital safety
+    image: '/assets/images/offering-bonds.jpg',
     width: 416,
     height: 429,
     isLarge: false,
@@ -34,7 +35,8 @@ const projectShowcaseList = [
     title: 'Child & Retirement Plan',
     category: 'Child & Retirement Plan',
     tag: 'Goal-Based Education & Wealth Preservation',
-    image: '/assets/images/project-3.jpg',
+    // 3 kids playing football together with joy in the sunny square
+    image: '/assets/images/offering-child.jpg',
     width: 416,
     height: 429,
     isLarge: false,
@@ -45,18 +47,21 @@ const projectShowcaseList = [
     title: 'Equities',
     category: 'Equities',
     tag: 'Trading, Research, IPOs & Demat',
-    image: '/assets/images/project-4.jpg',
+    // Live stock market candlestick chart
+    image: '/assets/images/offering-equities.jpg',
     width: 416,
     height: 429,
     isLarge: false,
-    description: 'Online trading platform with real-time research, electronic holding, and automated corporate benefits.'
+    description: 'Online trading platform with real-time research, electronic holding, and automated corporate benefits.',
+    link: '/equities'
   },
   {
     id: 'insurance',
     title: 'Insurance',
     category: 'Insurance',
     tag: 'Life, Health & Comprehensive Protection',
-    image: '/assets/images/project-5.jpg',
+    // Heartwarming protection & care: mother and child in golden sunset by the ocean
+    image: '/assets/images/offering-insurance.jpg',
     width: 416,
     height: 429,
     isLarge: false,
@@ -67,7 +72,8 @@ const projectShowcaseList = [
     title: 'Mutual Funds',
     category: 'Mutual Funds',
     tag: 'Equity, Debt, Hybrid Funds & Systematic SIPs',
-    image: '/assets/images/project-6.jpg',
+    // Coins stacked in a glass jar with growing sprout — compounding SIP
+    image: '/assets/images/offering-mutual-funds.jpg',
     width: 416,
     height: 429,
     isLarge: false,
@@ -79,35 +85,18 @@ const projectShowcaseList = [
     title: 'PMS',
     category: 'PMS',
     tag: 'Portfolio Management Services (Min ₹50L)',
-    image: '/assets/images/project-7.jpg',
+    // Institutional wealth advisor reviewing portfolio research
+    image: '/assets/images/offering-pms.jpg',
     width: 416,
     height: 429,
     isLarge: false,
-    description: 'Tailor-made, research-oriented dynamic portfolios held directly in your name for superior alpha generation.'
+    description: 'Tailor-made, research-oriented dynamic portfolios held directly in your name for superior alpha generation.',
+    link: '/pms'
   }
 ];
 
+
 const Offerings = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
-
-  useEffect(() => {
-    const handleSelectOffering = (e) => {
-      if (e.detail) {
-        setActiveFilter(e.detail);
-        const el = document.getElementById('offerings');
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    };
-    window.addEventListener('asr-select-offering', handleSelectOffering);
-    return () => window.removeEventListener('asr-select-offering', handleSelectOffering);
-  }, []);
-
-  const filteredProjects = activeFilter === 'All'
-    ? projectShowcaseList
-    : projectShowcaseList.filter(item => item.category === activeFilter);
-
   return (
     <section className="section project" id="project" aria-label="project">
       <div className="container" id="offerings">
@@ -126,26 +115,6 @@ const Offerings = () => {
           </h2>
         </motion.div>
 
-        {/* Filter Pills from Pixology */}
-        <motion.ul 
-          className="filter-list"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          {offeringCategories.map((category) => (
-            <li key={category}>
-              <button
-                className={`filter-btn ${activeFilter === category ? 'active' : ''}`}
-                onClick={() => setActiveFilter(category)}
-              >
-                {category}
-              </button>
-            </li>
-          ))}
-        </motion.ul>
-
         {/* Project Grid from Pixology */}
         <motion.ul 
           className="grid-list"
@@ -155,8 +124,8 @@ const Offerings = () => {
           viewport={{ once: true, margin: "-50px" }}
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => {
-              const isFirstInAll = index === 0 && activeFilter === 'All';
+            {projectShowcaseList.map((project, index) => {
+              const isFirstInAll = index === 0;
               return (
                 <motion.li 
                   key={project.id}

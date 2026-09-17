@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="eqBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181C20" />
+      <stop offset="50%" stop-color="#202428" />
+      <stop offset="100%" stop-color="#131619" />
+    </linearGradient>
+    <pattern id="eqGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="chartGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="rgba(93, 92, 231, 0.0)" />
+      <stop offset="100%" stop-color="rgba(93, 92, 231, 0.25)" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#eqBgGrad)" />
+  <rect width="800" height="1000" fill="url(#eqGrid)" />
+
+  <!-- Ambient Glow Circles -->
+  <circle cx="680" cy="220" r="260" fill="none" stroke="rgba(93, 92, 231, 0.15)" stroke-width="1.5" />
+  <circle cx="680" cy="220" r="190" fill="none" stroke="rgba(255, 219, 74, 0.12)" stroke-width="1" />
+  <circle cx="120" cy="780" r="300" fill="none" stroke="rgba(93, 92, 231, 0.12)" stroke-width="1.5" />
+
+  <!-- Dashed Target Frame -->
+  <rect x="140" y="240" width="520" height="520" rx="20" fill="rgba(255, 255, 255, 0.02)" stroke="rgba(255, 255, 255, 0.14)" stroke-width="1.5" stroke-dasharray="8 6" />
+
+  <!-- Stylized Market Candlestick / Growth Chart Graphic -->
+  <g transform="translate(250, 420)">
+    <!-- Chart fill -->
+    <path d="M 0 100 L 60 70 L 120 85 L 180 40 L 240 55 L 300 0 L 300 120 L 0 120 Z" fill="url(#chartGrad)" />
+    <!-- Chart line -->
+    <path d="M 0 100 L 60 70 L 120 85 L 180 40 L 240 55 L 300 0" fill="none" stroke="#5D5CE7" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Pulse nodes -->
+    <circle cx="60" cy="70" r="4.5" fill="#FFDB4A" />
+    <circle cx="180" cy="40" r="4.5" fill="#FFDB4A" />
+    <circle cx="300" cy="0" r="6" fill="#FFDB4A" stroke="#5D5CE7" stroke-width="2" />
+  </g>
+
+  <!-- Labels -->
+  <text x="400" y="585" font-family="'DM Sans', -apple-system, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">
+    Equities Image Slot
+  </text>
+  <text x="400" y="622" font-family="'DM Sans', -apple-system, sans-serif" font-size="16" font-weight="400" fill="rgba(255, 255, 255, 0.65)" text-anchor="middle">
+    Reserved space for your trading platform graphic / photo
+  </text>
+
+  <!-- Status Pill -->
+  <rect x="290" y="660" width="220" height="34" rx="17" fill="rgba(255, 219, 74, 0.12)" stroke="rgba(255, 219, 74, 0.4)" stroke-width="1" />
+  <text x="400" y="682" font-family="'DM Sans', -apple-system, sans-serif" font-size="13" font-weight="600" fill="#FFDB4A" text-anchor="middle" letter-spacing="0.5">
+    Ready to Attach Picture
+  </text>
+</svg>

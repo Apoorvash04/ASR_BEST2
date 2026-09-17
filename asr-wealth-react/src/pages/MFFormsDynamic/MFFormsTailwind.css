@@ -1,0 +1,4 @@
+@tailwind components;
+@tailwind utilities;
+
+/* We omit @tailwind base to avoid resetting the entire site's styles */

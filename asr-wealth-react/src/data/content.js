@@ -360,7 +360,6 @@ export const whyChooseUsData = [
 ];
 
 export const navLinks = [
-  { label: 'Home', href: '/' },
   { 
     label: 'About Us', 
     href: '/company-profile',
@@ -376,10 +375,10 @@ export const navLinks = [
       { label: 'Alternate Investment Funds', category: 'Alternate Investment Funds', href: '/alternate-investment-funds' },
       { label: 'Bonds', category: 'Bonds', href: '/#offerings' },
       { label: 'Child & Retirement Plan', category: 'Child & Retirement Plan', href: '/#offerings' },
-      { label: 'Equities', category: 'Equities', href: '/#offerings' },
+      { label: 'Equities', category: 'Equities', href: '/equities' },
       { label: 'Insurance', category: 'Insurance', href: '/#offerings' },
       { label: 'Mutual Funds', category: 'Mutual Funds', href: '/mutual-funds' },
-      { label: 'PMS', category: 'PMS', href: '/#offerings' },
+      { label: 'PMS', category: 'PMS', href: '/pms' },
     ]
   },
   { 
@@ -581,9 +580,124 @@ export const alternateInvestmentFundsData = {
   imageAlt: 'Alternate Investment Funds reserved image slot'
 };
 
+/* ── Portfolio Management Services (PMS) Page Data ── */
+export const pmsPageData = {
+  titlePrefix: 'Portfolio',
+  titleHighlight: 'Management',
+  titleSuffix: 'Services',
+  badge: 'BESPOKE WEALTH SOLUTIONS',
+  minInvestment: '₹50 Lacs',
+  minCapNotice: 'Portfolio Management Services have a minimum investment cap of Rs.50 Lacs.',
+  overview: [
+    'Financial markets are complex to understand and invest into. Pre-requisites such as market knowledge, in-depth research, analysis and past experience is often not accessible to an individual investor. This is where Portfolio Management Services can bridge the gap. PMS manages an ideal combination of securities to generate optimum return and reducing risk through proper diversification. Unlike Mutual Funds, the ownership of securities lies with the investor and is dynamically managed.',
+    'At ASR Wealth, we strive hard to discover, evaluate, monitor and track industry experts who offer PMS solutions that benefit our customers with ideal returns whilst having a proven track record of performance.'
+  ],
+  howWeHelp: {
+    title: 'How do we help?',
+    lead: 'We strike a fine balance between your assets, investment and strategies to make the most of your money',
+    points: [
+      {
+        number: '01',
+        title: 'Complementary Alignment',
+        desc: 'We compliment a PMS strategy with the existing investments, assets, net worth and risk profile.'
+      },
+      {
+        number: '02',
+        title: 'Calibrated Asset Allocation',
+        desc: 'We are measured and use a calibrated approach to allocate funds into respective categories to ensure superior outcome.'
+      },
+      {
+        number: '03',
+        title: 'Rigorous Screening & Selection',
+        desc: 'Only a few chosen portfolios, after rigorous screening, are presented for your consideration. Give us an opportunity to present our exclusive & selected strategies along with their portfolios and performance. Schedule a personal PMS presentation today.',
+        ctaText: 'Schedule a Personal PMS Presentation',
+        ctaLink: '/#contact'
+      }
+    ]
+  },
+  advantages: {
+    title: 'The PMS Advantage for you!',
+    subtitle: 'KEY BENEFITS & PRIVILEGES',
+    items: [
+      'Professionally managed, tailor-made portfolios by experts in the industry',
+      'Robust & research-oriented, giving you the benefit of early access to great companies',
+      'Dynamic & diversified Portfolio for superior outcomes across market cycles',
+      'Full transparency with great convenience (Securities/investments are held directly in your name but managed by portfolio manager)',
+      'Easy to invest, track and monitor in a tax efficient manner',
+      'Avoids duplication, excessive risk saves tremendous amount of time consumption'
+    ]
+  },
+  image: '/assets/images/pms-dummy.svg',
+  imageAlt: 'Portfolio Management Services reserved image slot'
+};
+
+/* ── Equities Page Data ── */
+export const equitiesPageData = {
+  titlePrefix: 'Direct',
+  titleHighlight: 'Equities',
+  titleSuffix: '& Broking',
+  badge: 'CAPITAL MARKETS',
+  intro:
+    'Equities provide direct ownership in India’s premier public companies, offering superior long-term capital appreciation, inflation-beating compounding, and corporate dividends. Through ASR Wealth, investors access an institutional-grade direct equity and Demat infrastructure with advanced research, real-time market updates, and complete digital convenience.',
+  features: [
+    {
+      id: 'online-trading',
+      title: 'Online Trading & Access',
+      desc: 'Provides a platform (mobile or web app) that allows clients to buy, sell, and manage their securities entirely online, anytime, anywhere.',
+      tag: 'Digital Platform',
+      color: '93, 92, 231' /* Electric Indigo */
+    },
+    {
+      id: 'lower-costs',
+      title: 'Lower Transaction Costs',
+      desc: 'Cost-effective execution with transparent, competitive brokerage structures designed to maximize net investment returns.',
+      tag: 'Cost Efficiency',
+      color: '14, 165, 233' /* Sky / Cyan */
+    },
+    {
+      id: 'market-research',
+      title: 'Market Research & Updates',
+      desc: 'Offers access to real-time stock quotes, market news, analyst reports, and trading tools.',
+      tag: 'Research & Tools',
+      color: '245, 158, 11' /* Amber */
+    },
+    {
+      id: 'ipo-applications',
+      title: 'IPO, FPO & Rights Issue Applications',
+      desc: 'Allows clients to electronically apply for IPOs, Follow-on Public Offers (FPOs), and Rights Issues using the ASBA facility.',
+      tag: 'Primary Market',
+      color: '16, 185, 129' /* Emerald */
+    },
+    {
+      id: 'pledging',
+      title: 'Pledging and Hypothecation',
+      desc: 'Enables clients to use the securities held in their Demat Account as collateral to avail loans from financial institutions.',
+      tag: 'Liquidity Leverage',
+      color: '139, 92, 246' /* Purple */
+    },
+    {
+      id: 'electronic-holding',
+      title: 'Electronic Holding of Securities',
+      desc: 'Securely holds clients’ investments (shares & ETFs) in a digital, paperless format.',
+      tag: 'Demat Safety',
+      color: '42, 123, 127' /* Deep Teal */
+    },
+    {
+      id: 'corporate-actions',
+      title: 'Corporate Action Benefits',
+      desc: 'Automatically credits corporate benefits like dividends, interest payments, bonus shares, and proceeds from stock splits directly to the client’s account or linked bank account.',
+      tag: 'Direct Payouts',
+      color: '236, 72, 153' /* Pink / Rose */
+    }
+  ],
+  image: '/assets/images/equities-dummy.svg',
+  imageAlt: 'ASR Wealth Direct Equities Platform'
+};
+
 export const companyProfileData = {
+  tagline: 'Where Wealth Finds Purpose.',
   aboutUs:
-    'For over 45 years, Credible has been synonymous with professionalism, performance, and trust. Our seasoned team of investment professionals brings together decades of collective experience in wealth management, financial investing, and strategic asset allocation. We take pride in helping our clients navigate the complexities of financial markets through a disciplined and research-backed approach.',
+    'A boutique investment firm built on relationships, driven by expertise, and inspired by the future. At ASR Wealth, we combine disciplined research, tailored asset allocation, and generational wealth planning to simplify financial success for discerning families, professionals, and institutions.',
   quickLinks: [
     { label: 'Sign Up', href: 'https://credible.live/sign-up/' },
     { label: 'Client Login', href: 'https://abhinavmehtacapital.investwell.app/' },
@@ -594,8 +708,8 @@ export const companyProfileData = {
   serviceLinks: [
     { label: 'Mutual Funds', href: '/mutual-funds' },
     { label: 'Bonds', href: 'https://credible.live/bonds/' },
-    { label: 'Equities', href: 'https://credible.live/equites/' },
-    { label: 'PMS', href: 'https://credible.live/pms/' },
+    { label: 'Equities', href: '/equities' },
+    { label: 'PMS', href: '/pms' },
     { label: 'AIF', href: '/alternate-investment-funds' },
   ],
   contact: {

@@ -1,17 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { IoPlayOutline, IoLogoFacebook, IoLogoYoutube, IoLogoTwitter } from 'react-icons/io5';
+import { IoPlayOutline } from 'react-icons/io5';
 import { brandData } from '../../data/content';
 import { heroTextReveal, staggerContainer } from '../../utils/animations';
 import './Hero.css';
 
 const Hero = () => {
-  const socialLinks = [
-    { platform: 'Facebook', icon: <IoLogoFacebook />, url: '#', color: '#5D5CE7' },
-    { platform: 'Youtube', icon: <IoLogoYoutube />, url: '#', color: '#FF3333' },
-    { platform: 'Twitter', icon: <IoLogoTwitter />, url: '#', color: '#1DA1F2' }
-  ];
-
   const scrollToTeam = () => {
     const el = document.getElementById('leadership');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -45,22 +39,6 @@ const Hero = () => {
               <span className="span">Meet the Team</span>
             </button>
           </motion.div>
-          
-          <motion.ul variants={heroTextReveal} className="social-list">
-            {socialLinks.map((social, index) => (
-              <li key={index}>
-                <a 
-                  href={social.url} 
-                  className="social-link"
-                  style={{ '--color': social.color }}
-                  aria-label={social.platform}
-                >
-                  {social.icon}
-                  <span className="span">{social.platform}</span>
-                </a>
-              </li>
-            ))}
-          </motion.ul>
         </motion.div>
         
         <motion.figure 
