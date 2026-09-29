@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="16" fill="#5D5CE7"/>
-  <text x="50" y="44" text-anchor="middle" font-family="'DM Sans', sans-serif" font-weight="700" font-size="28" fill="#FFFFFF">ASR</text>
-  <line x1="25" y1="54" x2="75" y2="54" stroke="#FFDB4A" stroke-width="2.5" stroke-linecap="round"/>
-  <text x="50" y="74" text-anchor="middle" font-family="'DM Sans', sans-serif" font-weight="600" font-size="11" letter-spacing="3" fill="#FFDB4A">WEALTH</text>
-</svg>
